@@ -166,7 +166,7 @@ if send_button and user_input.strip():
         )
         reply = response.json()["choices"][0]["message"]["content"]
     except Exception as e:
-        reply = f"❌ خطایی رخ داد: {e}"
+        reply = f" خطایی رخ داد: {e}"
 
     response_placeholder = ""
     for ch in reply:
