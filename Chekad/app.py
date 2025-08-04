@@ -19,7 +19,7 @@ def stream_bot(user_input, history, chat_state):
         response = requests.post(
             url="https://openrouter.ai/api/v1/chat/completions",
             headers={
-                "Authorization": "Bearer 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",
+                "Authorization": "Bearer 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",
                 "Content-Type": "application/json",
                 "HTTP-Referer": "http://localhost",
                 "X-Title": "chakad"
@@ -49,10 +49,27 @@ def stream_bot(user_input, history, chat_state):
         ], chat_state
 
 
-with gr.Blocks(css="""
-body { background-color: #fefcf8 !important; direction: rtl; font-family: Vazir, sans-serif; }
-textarea, .message, .markdown { direction: rtl !important; font-family: Vazir, sans-serif !important; }
-""", theme=gr.themes.Soft()) as app:
+css = """
+:root {
+  --color-primary-500: #7B3FBF; /* بنفش */
+  --color-primary-600: #6A36A8;
+  --color-primary-700: #582E8C;
+  --color-primary-800: #4A2673;
+  --color-primary-900: #3D1E5A;
+}
+
+body {
+  direction: rtl;
+  font-family: Vazir, sans-serif;
+  background-color: #fefcf8 !important;
+}
+textarea, .message, .markdown {
+  direction: rtl !important;
+  font-family: Vazir, sans-serif !important;
+}
+"""
+
+with gr.Blocks(css=css, theme=gr.themes.Default()) as app:
 
     gr.Markdown("""
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet">
