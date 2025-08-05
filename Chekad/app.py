@@ -74,7 +74,6 @@ with gr.Blocks(css=css, theme=gr.themes.Default()) as app:
 
     gr.Markdown("""
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet">
-    <h1 style='text-align:center;'>چکاد | همراه تحصیلی تو</h1>
     <p style='text-align:center;'>سوالات درسی‌تو از من بپرس 🌟</p>
     """)
 
