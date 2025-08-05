@@ -19,7 +19,7 @@ def stream_bot(user_input, history, chat_state):
         response = requests.post(
             url="https://openrouter.ai/api/v1/chat/completions",
             headers={
-                "Authorization": "Bearer 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",
+                "Authorization": "Bearer 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",
                 "Content-Type": "application/json",
                 "HTTP-Referer": "http://localhost",
                 "X-Title": "chakad"
@@ -83,4 +83,4 @@ with gr.Blocks(css=css, theme=gr.themes.Default()) as app:
 
     txt.submit(stream_bot, inputs=[txt, chatbot_ui, state], outputs=[txt, chatbot_ui, state])
 
-app.launch()
+app.launch(server_name="0.0.0.0", server_port=int(os.environ.get("PORT", 7860)))
