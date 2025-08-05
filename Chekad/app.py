@@ -2,6 +2,7 @@ import gradio as gr
 import requests
 import json
 import time
+import os
 
 system_prompt = {
     "role": "system",
