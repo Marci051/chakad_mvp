@@ -13,23 +13,27 @@ system_prompt = {
 """
 }
 
+
+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
+
+
 def stream_bot(user_input, history, chat_state):
     chat_state.append({"role": "user", "content": user_input})
 
     try:
         response = requests.post(
-            url="https://openrouter.ai/api/v1/chat/completions",
-            headers={
-                "Authorization": "Bearer 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",
-                "Content-Type": "application/json",
-                "HTTP-Referer": "http://localhost",
-                "X-Title": "chakad"
-            },
-            json={
-                "model": "deepseek/deepseek-r1-0528-qwen3-8b:free",
-                "messages": chat_state
-            }
-        )
+    "https://openrouter.ai/api/v1/chat/completions",
+    headers={
+        "Authorization": f"Bearer {os.getenv('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')}",
+        "Content-Type": "application/json",
+        "HTTP-Referer": "http://localhost/",
+        "X-Title": "chakad"
+    },
+    json={
+        "model": "deepseek/deepseek-r1",
+        "messages": chat_state
+    }
+)
 
         if response.status_code != 200:
             reply = f"خطا: وضعیت پاسخ API برابر {response.status_code} است.\nجزئیات: {response.text}"
