@@ -13,10 +13,6 @@ system_prompt = {
 """
 }
 
-
-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
-
-
 def stream_bot(user_input, history, chat_state):
     chat_state.append({"role": "user", "content": user_input})
 
@@ -24,7 +20,7 @@ def stream_bot(user_input, history, chat_state):
         response = requests.post(
     "https://openrouter.ai/api/v1/chat/completions",
     headers={
-        "Authorization": f"Bearer {os.getenv('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')}",
+        "Authorization": "Bearer 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",
         "Content-Type": "application/json",
         "HTTP-Referer": "http://localhost/",
         "X-Title": "chakad"
