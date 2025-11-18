@@ -20,13 +20,13 @@ def stream_bot(user_input, history, chat_state):
         response = requests.post(
             url="https://openrouter.ai/api/v1/chat/completions",
             headers={
-                "Authorization": "Bearer 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",
+                "Authorization": "Bearer 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",
                 "Content-Type": "application/json",
                 "HTTP-Referer": "http://localhost",
                 "X-Title": "chakad"
             },
             json={
-                "model": "deepseek/deepseek-r1-0528:free",
+                "model": "deepseek/deepseek-r1-0528-qwen3-8b:free",
                 "messages": chat_state
             }
         )
